@@ -34,8 +34,8 @@ function generateBookmarks(){
             <button type="button" class="collapsible js-collapsible">${obj.store.bookmarks[i].title}   
             Rating:${obj.store.bookmarks[i].rating}</button>
                 <div class="bookmark-btn-content expandable bookmark-btn-content-hidden">
-                  <button type="url" class="btn-to-link js-btn-to-link">${obj.store.bookmarks[i].url}</button>
-                        <p class="rating">${obj.store.bookmarks[i].rating}</p>
+                  <h4 class="btn-to-link js-btn-to-link"><a href="${obj.store.bookmarks[i].url}" title="Go to bookmark">Visit Site</a></h4>
+                        <p class="rating">Rating: ${obj.store.bookmarks[i].rating}</p>
                         <p>${obj.store.bookmarks[i].desc}</p>
                   <button type="button" class="btn-to-edit">Edit</button>
                 </div>
@@ -76,11 +76,11 @@ function generateAddBookmark(){
                 
               <div class="bookmark-desc">
                 <label for="bookmark-description"></label>
-                <textarea class="js-bookmark-description" id="bookmark-description" name="description" required maxlength="600" rows="4" cols="50" placeholder="Bookmark Description"></textarea>
+                <textarea class="js-bookmark-description" id="bookmark-description" name="description" required maxlength="65" rows="4" cols="50" placeholder="Bookmark Description"></textarea>
               </div>
               <br>
                 <button type="reset" class="btn-to-cancel">Cancel</button>
-                <button type="submit" class="btn-to-submit">Submit</button>
+                <button type="submit" class="btn-to-submit">ADD</button>
 
             </form>
         </div> `;
