@@ -33,7 +33,7 @@ function generateBookmarks(){
         <section class="expand-collapse js-expand-collapse">
             <button type="button" class="collapsible js-collapsible">${obj.store.bookmarks[i].title}   
             Rating:${obj.store.bookmarks[i].rating}</button>
-                <div class="bookmark-btn-content collapsible bookmark-btn-content-hidden">
+                <div class="bookmark-btn-content expandable bookmark-btn-content-hidden">
                   <button type="url" class="btn-to-link js-btn-to-link">${obj.store.bookmarks[i].url}</button>
                         <p class="rating">${obj.store.bookmarks[i].rating}</p>
                         <p>${obj.store.bookmarks[i].desc}</p>
@@ -50,31 +50,35 @@ function generateBookmarks(){
 function generateAddBookmark(){
   let addBookmark = `
     <div class="add-bookmark-form">
-            <form action="" method="post" id="js-add-bookmark">
+            <form action="" class="new-bookmark-form" method="post" id="js-add-bookmark">
                 
-                <label for="bookmark-url">URL:</label>
+              <div class="bookmark-link">
+                <label class="bookmark-url" for="bookmark-url">URL:</label>
                 <input class="js-bookmark-url" id="bookmark-url" type="url" name="url" required>
-                
-                <label for="bookmark-name">Title:</label>
+              </div>
+                <br>
+              <div class="bookmark-title">
+                <label class="bookmark-name" for="bookmark-name">Title:</label>
                 <input class="js-bookmark-name" id="bookmark-name" type="text" name="name" required>
-
+              </div>
               
             
             <div class="star-rating-icons">
                 <p>Rating</p>
-              <select name="bookmark-rating" class="js-bookmark-rating" id="js-bookmark-rating" aria-placeholder="Rating">
+              <select name="bookmark-rating" class="js-bookmark-rating bookmark-rating" id="js-bookmark-rating" aria-placeholder="Rating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-            </select>
-                
+              </select>
             </div>
                 
+              <div class="bookmark-desc">
                 <label for="bookmark-description"></label>
                 <textarea class="js-bookmark-description" id="bookmark-description" name="description" required maxlength="600" rows="4" cols="50" placeholder="Bookmark Description"></textarea>
-
+              </div>
+              <br>
                 <button type="reset" class="btn-to-cancel">Cancel</button>
                 <button type="submit" class="btn-to-submit">Submit</button>
 

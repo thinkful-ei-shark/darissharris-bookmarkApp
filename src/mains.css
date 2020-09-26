@@ -1,33 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+}
 body {
     background-color: darkgray;
-    margin: 20px;
 }
 
-.header h1 {
+h1 {
+    padding: 20px;;
     font-family: "Press Start 2P", sans-serif;
-    margin: 20px;
     font-size: 36px;
     width: 60%;
 
 }
 
 .header h2 {
+    padding: 20px;
     font-family: 'Noto Serif', serif;
-    margin: 20px;
     font-size: 16px;
+}
+
+main {
+  display: flex;
 }
 
 .btn-to-link{
     font-family: 'Press Start 2P', serif;
     font-size: 14px;
-    border: none; 
-    text-align: center;
-    display: inline-block;
     padding: 12px 28px;
-    
+    margin: 10px;
     color: black;
     border: 2px solid #4CAF50;
 }
+
+.btn-to-edit {
+    font-family: 'Noto Serif', serif;
+    margin: 20px;
+    display: inline-block;
+    padding: 12px 48px;
+    font-size: 14px;
+    border: none;
+    background-color: #fff;
+}
+
+.expandable {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin: 20px;
+  margin-top: 0px;
+}
+
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
     background-color: #eee;
@@ -40,6 +69,8 @@ body {
     outline: none;
     font-size: 15px;
     margin: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
   
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -49,11 +80,11 @@ body {
   
 /* Style the collapsible content */
 .bookmark-btn-content {
+    /* display: flex; */
     padding: 0 18px;
     background-color: white;
-    /* max-height: 0; */
     transition: max-height 0.2s ease-out;
-    margin: 20px;
+    /* margin: 20px; */
   }
 
 /* */
@@ -63,7 +94,7 @@ body {
 }
 
 .collapsible:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    content: '\02795'; 
     font-size: 13px;
     color: white;
     float: right;
@@ -71,13 +102,12 @@ body {
   }
   
 .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    content: "\2796"; 
   }
 
 /* adding and filter by buttons */
 #filter-by-ratings {
-    margin: 20px 0 0 20px;
-    text-align: center;
+    margin: 20px;
     display: inline-block;
     padding: 12px 28px;
     font-family: 'Noto Serif', serif;
@@ -87,7 +117,6 @@ body {
 
 #add-bookmark-btn {
     margin: 20px;
-    text-align: center;
     display: inline-block;
     padding: 12px 48px;
     font-family: 'Noto Serif', serif;
@@ -99,3 +128,41 @@ body {
   #add-bookmark-btn:hover {
     background-color: #ccc;
   }
+
+  .bookmark-container {
+    display: flex;
+  }
+
+  .add-filter-section {
+    flex: .5;
+  }
+
+  .bookmark-btn-content p {
+    font-size: 16px;
+    font-family: 'Noto Serif', serif;
+    margin: 10px 0;
+    flex: 5;
+  }
+
+/* .bookmark-btn-content {
+  padding: 18px;
+} */
+
+/* add new bookmark section */
+.bookmark-link {
+  margin: 10px 0 5px 20px;
+  width: 100%;
+}
+
+.bookmark-title {
+  margin: 10px 0 5px 20px;
+  width: 100%;
+}
+
+.star-rating-icons {
+  margin: 20px ;
+}
+
+.bookmark-desc {
+  margin-bottom: 20px;
+}
