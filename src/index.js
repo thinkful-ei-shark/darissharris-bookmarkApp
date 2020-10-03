@@ -37,7 +37,7 @@ function generateBookmarks(){
                   <h4 class="btn-to-link js-btn-to-link"><a href="${obj.store.bookmarks[i].url}" title="Go to bookmark">Visit Site</a></h4>
                         <p class="rating">Rating: ${obj.store.bookmarks[i].rating}</p>
                         <p>${obj.store.bookmarks[i].desc}</p>
-                  <button type="button" class="btn-to-edit">Edit</button>
+                  <button type="button" class="btn-to-edit"></button>
                 </div>
         </section>
         `;

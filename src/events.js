@@ -58,29 +58,13 @@ function cancelNewBtn(){
 }
 
 
-// user can edit/update an existing bookmark
-function editBookmark(){}
-
-// user can delete active bookamrk from bookmark list
-function deleteBookmark(){}
-
-// user can cancel editing/adding new bookmark and return to prior state
-function cancelBtn(){}
-
-
-// user can add new/updated bookmark info on submit button will append new bookmark to main page bookmark list
-function submitBookmark(){}
-
-// will alert user if input criterior is not met
-function submitError(){}
-
-// user can select input for bookmark's rating 
-function addRating(){}
-
 // user can select filter to display appropriate bookmarks
 function filterBy(){
   $('main').on('change', '#filter-by-ratings', function(evt){
     evt.preventDefault();
+    $('option').filter(function(index){
+      
+    });
   });
 }
 
