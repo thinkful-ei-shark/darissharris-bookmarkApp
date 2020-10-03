@@ -1,6 +1,8 @@
 # darissharris-bookmarkApp
 Store all your favorite web stops in a one awesome location!
 
+[preview](https://thinkful-ei-shark.github.io/darissharris-bookmarkApp/)
+
 User Stories
 As a user:
 
