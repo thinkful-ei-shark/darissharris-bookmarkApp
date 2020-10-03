@@ -63,12 +63,8 @@ function cancelNewBtn(){
 function handleFilterBy(){
   $('main').on('change', '#filter-by-ratings', function(evt){
     evt.preventDefault();
-    console.log('change happening');
   
     let value = parseInt($(this).val()); 
-    console.log('filter changed');
-    console.log(value);
-
     store.store.filter = value;
 
     index.render();
