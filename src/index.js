@@ -16,11 +16,12 @@ function generateBookmarksPage(){
         
             <select name="filter-by-ratings" id="filter-by-ratings" aria-placeholder="Filter By">
 // on('change', '.className', function)
-                <option value="filterBy">Filter By</option>
-                <option value="1+Ratings">1+ Ratings</option>
-                <option value="2+Ratings">2+ Ratings</option>
-                <option value="3+Ratings">3+ Ratings</option>
-                <option value="4+Ratings">4+ Ratings</option>
+                <option class="filtered-by" value disabled selected hidden>Filter By</option>
+                <option class="filtered-by" value="0">All</option>
+                <option class="filtered-by" value="1">1+ Ratings</option>
+                <option class="filtered-by" value="2">2+ Ratings</option>
+                <option class="filtered-by" value="3">3+ Ratings</option>
+                <option class="filtered-by" value="4">4+ Ratings</option>
             </select>
       </form> ${generateBookmarks()}`;
 }
@@ -29,7 +30,9 @@ function generateBookmarksPage(){
 function generateBookmarks(){
   let bookmarkPage = '';
   for (let i = 0; i < obj.store.bookmarks.length; i++){
-    bookmarkPage += `
+    console.log(i);
+    if (obj.store.bookmarks[i].rating >= obj.store.filter){
+      bookmarkPage += `
         <section class="expand-collapse js-expand-collapse">
             <button type="button" class="collapsible js-collapsible">${obj.store.bookmarks[i].title}   
             Rating:${obj.store.bookmarks[i].rating}</button>
@@ -41,6 +44,7 @@ function generateBookmarks(){
                 </div>
         </section>
         `;
+    }
   }
   return `<div>${bookmarkPage}</div>`;
 }

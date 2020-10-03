@@ -2,6 +2,7 @@ import $ from 'jquery';
 import obj from './store';
 import api from './api';
 import index from './index';
+import store from './store';
 
 // user can expand and collapse bookmark info on main page
 function expandCollapse(){
@@ -59,21 +60,40 @@ function cancelNewBtn(){
 
 
 // user can select filter to display appropriate bookmarks
-function filterBy(){
+function handleFilterBy(){
   $('main').on('change', '#filter-by-ratings', function(evt){
     evt.preventDefault();
-    $('option').filter(function(index){
-      
-    });
+    console.log('change happening');
+  
+    let value = parseInt($(this).val()); 
+    console.log('filter changed');
+    console.log(value);
+
+    store.store.filter = value;
+
+    index.render();
   });
 }
+
+// function handleFilter() {
+//   $('header').on('click', function () {
+//       console.log('CHANGE HAPPENING');
+//       $('.js-bookmark-rating').on('change', function () {
+//           let value = $(this).val();
+//           console.log('FILTER CHANGED')
+//           console.log(value);
+//           store.store.filter = value;
+//           render();
+//       })
+//   })
+// }
 
 function bindEventListeners(){
   addNewBtn();
   addNewBtnSubmit();
   expandCollapse();
   cancelNewBtn();
-  filterBy();
+  handleFilterBy();
     
 }
 
